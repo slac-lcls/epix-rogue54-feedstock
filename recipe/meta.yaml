@@ -1,0 +1,42 @@
+{% set name = "epix" %}
+{% set version = "0.0.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  - url:  https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
+    sha256: c6e049edca499b553334425ce3e69c2e1bb41d157bdccd3edb411fa1ac4a8272
+
+build:
+  skip: True  # [win or osx]
+  noarch: python
+  number: 0
+  script:
+    - "cd firmware/python && {{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - pip
+  run:
+    - python
+
+about:
+  home: https://github.com/slaclab/epix
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: 'Epix software and firmware'
+  description: |
+    firmware and software for Epix devices.
+  doc_url: https://github.com/slaclab/epix
+  dev_url: https://github.com/slaclab/epix
+
+extra:
+  recipe-maintainers:
+    - valmar
+    - chrisvam
+
