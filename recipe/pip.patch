@@ -33,7 +33,7 @@ new file mode 100644
 index 0000000..54c2e19
 --- /dev/null
 +++ b/setup.py
-@@ -0,0 +1,60 @@
+@@ -0,0 +1,61 @@
 +from setuptools import setup, find_packages
 +
 +# use softlinks to make the various "board-support-package" submodules
@@ -48,6 +48,7 @@ index 0000000..54c2e19
 +    name = 'epix',
 +    description = 'LCLS II Epix package',
 +    packages = [
++        'epix',
 +        'epix.surf',
 +        'epix.surf.misc',
 +        'epix.surf.dsp',
