@@ -1,5 +1,5 @@
 {% set name = "epix" %}
-{% set version = "0.0.2git15" %}
+{% set version = "0.0.2+15" %}
 
 package:
   name: {{ name|lower }}
