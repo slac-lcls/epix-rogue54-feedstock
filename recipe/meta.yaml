@@ -1,5 +1,5 @@
 {% set name = "epix" %}
-{% set version = "0.0.2+15" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url:  https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: 2b52367f0d82e17dd98aaa02fb0fec749ba6bf5199f16ea98ec27a0d0757d3ff 
+  sha256: c6e049edca499b553334425ce3e69c2e1bb41d157bdccd3edb411fa1ac4a8272
   patches:
-    - python.patch
+    - pip.patch
 
 build:
   skip: True  # [win or osx]
   noarch: python
-  number: 0
+  number: 6
   script:
     - "{{ PYTHON }} -m pip install . -vv"
 
